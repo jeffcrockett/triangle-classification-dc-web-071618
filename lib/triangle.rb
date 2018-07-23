@@ -22,7 +22,8 @@ class Triangle
   end
 
   class TriangleError < StandardError
-  def message
-    "A triangle cannot have one or more sides of length 0."
+    def message
+      "A triangle cannot have one or more sides of length 0."
+    end
   end
 end
