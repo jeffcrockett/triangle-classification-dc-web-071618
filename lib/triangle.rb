@@ -8,7 +8,7 @@ class Triangle
 
   def kind
     if [@first, @second, @third].any?{|side| side <= 0} || @first < @second + @third || @second < @first + @third || @third < @first + @second 
-      
+
       raise TriangleError
     else
       case [@first, @second, @third].uniq.length
