@@ -7,7 +7,7 @@ class Triangle
   end
 
   def kind
-    if [@first, @second, @third].include?(0)
+    if [@first, @second, @third].any?{|side| side <= 0}
       raise TriangleError
     else
       case [@first, @second, @third].uniq.length
