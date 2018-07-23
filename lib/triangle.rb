@@ -5,4 +5,15 @@ class Triangle
     @second = second
     @third = third
   end
+
+  def kind
+    case [@first, @second, @third].uniq.length
+      when 1
+        return :equilateral
+      when 2
+        return :isosceles
+      when 3
+        return :scalene
+    end
+  end
 end
