@@ -9,7 +9,7 @@ class Triangle
   def kind
     if [@first, @second, @third].include?(0)
       raise TriangleError
-    else 
+    else
       case [@first, @second, @third].uniq.length
         when 1
           return :equilateral
@@ -22,7 +22,7 @@ class Triangle
   end
 
   class TriangleError < StandardError
-  def message 
-    "A triangle cannot have a side of length 0."
+  def message
+    "A triangle cannot have one or more sides of length 0."
   end
 end
