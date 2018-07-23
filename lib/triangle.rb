@@ -7,13 +7,22 @@ class Triangle
   end
 
   def kind
-    case [@first, @second, @third].uniq.length
-      when 1
-        return :equilateral
-      when 2
-        return :isosceles
-      when 3
-        return :scalene
+    if [@first, @second, @third].include?(0)
+      raise TriangleError
+    else 
+      case [@first, @second, @third].uniq.length
+        when 1
+          return :equilateral
+        when 2
+          return :isosceles
+        when 3
+          return :scalene
+      end
     end
+  end
+
+  class TriangleError < StandardError
+  def message 
+    "A triangle cannot have a side of length 0."
   end
 end
